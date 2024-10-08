@@ -1,75 +1,125 @@
-/*Обнуление*/
-* {
-	padding: 0;
-	margin: 0;
-	border: 0;
+body {
+	margin-top: 112px;
 }
 
-*, *:before, *:after {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+._container {
+	max-width: 1120px;
+	padding: 0 16px;
 }
 
-:focus, :active {
-	outline: none;
+.header {
+	position: fixed;
+	height: 88px;
+	width: 100vw;
+	top: 0;
+	left: 0;
 }
 
-a:focus, a:active {
-	outline: none;
+.header__inner {
+	/*display: flex;
+	align-items: center;
+	justify-content: space-between;*/
+	display: grid;
+	grid-template-columns: 40px 97px 2px 40px 40px;
+	align-items: center;
+
+	height: 88px;
+	padding: 10px 0;
 }
 
-nav, footer, header, aside {
-	display: block;
+.menu {}
+
+.menu__icon {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #FF3E79;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-html, body {
-	height: 100%;
+.menu__icon-lines {
+	width: 18px;
+	height: 16px;
+	position: relative;
+}
+
+.menu__icon-lines span,
+.menu__icon-lines::after,
+.menu__icon-lines::before {
+	position: absolute;
+	left: 0;
+	height: 2px;
+	transition: all .3s ease 0s;
+	background-color: #fff;
+}
+
+.menu__icon-lines::after,
+.menu__icon-lines::before {
+	content: '';
+}
+
+.menu__icon-lines::after {
+	bottom: 0;
+	width: 14px;
+}
+
+.menu__icon-lines::before {
+	top: 0;
 	width: 100%;
-	font-size: 100%;
-	line-height: 1;
-	font-size: 14px;
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
 }
 
-input, button, textarea {
-	font-family: inherit;
+.menu__icon-lines span {
+	width: 10px;
+	top: 50%;
+	transform: scale(1) translate(0, -50%);
 }
 
-input::-ms-clear {
+.menu__body {}
+
+.menu__list {}
+
+.menu__link {}
+
+.header__logo-link {
+	order: 2;
+}
+
+.header__logo-img {}
+
+.header__profile {
 	display: none;
 }
 
-button {
-	cursor: pointer;
+.profile {}
+
+.profile__action-link {}
+
+.profile__action-icon {}
+
+.header__repair-status {
+	order: 5;
 }
 
-button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
+.header__inner::before {
+	content: '';
+	width: 2px;
+	height: 32px;
+	background-color: #EAEAEA;
+	order: 1;
 }
 
-a, a:visited {
-	text-decoration: none;
+.header__inner::after {
+	content: '';
+	width: 2px;
+	height: 32px;
+	background-color: #EAEAEA;
+	order: 4;
 }
 
-a:hover {
-	text-decoration: none;
+.header__repair-status span {
+	display: none;
 }
 
-ul li {
-	list-style: none;
-}
-
-img {
-	vertical-align: top;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-/*--------------------*/
+.header__repair-status-link {}
