@@ -50,7 +50,7 @@ body {
 	align-items: center;
 	justify-content: space-between;*/
 	display: grid;
-	grid-template-columns: 40px 97px 1fr 40px 40px;
+	grid-template-columns: 40px 97px 1fr 96px;
 	align-items: center;
 	gap: 16px;
 	height: 88px;
@@ -245,21 +245,73 @@ body {
 }
 
 .main__about {
+	display: flex;
+	flex-direction: column-reverse;
 }
+
+.main_about-img {
+	/*max-width: 360px;*/
+	margin: 0 -16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main_about-img img {
+	width: 100%;
+	max-width: 420px;
+}
+
 .main__about-text-box {
+	margin-bottom: 16px;
 }
 .main__about-text {
+
 }
+
+.main__about-text:not(:last-child) {
+	margin-bottom: 16px;
+}
+
 .read-more-btn {
+	position: relative;
+	padding-left: 32px;
+	width: 124px;
+	height: 24px;
+	background-color: transparent;
+	
 }
-.main_about-img {
+
+.read-more-btn::before {
+	content: '';
+	background: url("../img/icon-read-more.svg") 0 0 no-repeat;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 0;
+	top: 0;
+	display: block;
 }
 
 
 /* ===================Media============================== */
 
-@media (width > 767px) {
-	.header__inner::before {
+@media (width > 360px) {
+	.main_about-img {
+		margin: 0;
+	}
+}
+
+@media (width > 767.98px) {
+_container {
+	padding: 0 24px;
+}
+
+.header__inner {
+	grid-template-columns: 40px 10px 97px 1fr 10px 96px;
+}
+
+.header__inner::before {
 		content: '';
 		width: 2px;
 		height: 32px;
@@ -267,7 +319,55 @@ body {
 		order: 1;
 	}
 
-	.header__inner {
-		grid-template-columns: 40px 2px 97px 1fr 40px 40px;
+	.header__profile {
+		display: flex;
+		order: 4;
+		gap: 16px;
+		justify-self: end;
 	}
+	
+	
+	.main__about {
+		display: block;
+	}
+
+	.main__about::after{
+		content: '';
+		clear: both;
+		display: table;
+	}
+
+	.main_about-img {
+		float: right;
+		width: 360px;
+		margin-left: 49px;
+		margin-bottom: 24px;
+	}
+}
+
+@media (width > 1119.98px) {
+	._container {
+		max-width: 1440px;
+		padding: 0 32px;
+	}
+	
+	.header__inner {
+		display: flex;
+	}
+
+	.header__profile {
+		margin-left: auto;
+	}
+
+	.header__repair-status-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;	
+	}
+
+	.header__repair-status-link > span {
+		display: inline-block;
+	}
+
 }
