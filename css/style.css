@@ -28,8 +28,9 @@ body {
 	font-size: 16px;
 	letter-spacing: 0.2px;
 	color: #7E7E82;
-	margin-top: 88px;
+	padding-top: 88px;
 	height: calc(100vh - 88px);
+	background-color: #F8F8F8;
 }
 
 ._container {
@@ -78,7 +79,7 @@ body {
 }
 
 
-.menu__icon {
+.icon-box {
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
@@ -148,10 +149,6 @@ body {
 
 /*=======================Main============================*/
 
-.main {
-	background-color: #F8F8F8;
-	padding-top: 24px;
-}
 
 .main__title {
 	font-size: 28px;
@@ -159,9 +156,8 @@ body {
 	line-height: 1.4;
 	letter-spacing: -0.6px;
 	color: #1B1C21;
-	padding: 0 16px;
 	position: relative;
-	margin-bottom: 24px;
+	margin: 24px 0;
 }
 
 .main__title::before {
@@ -169,7 +165,7 @@ body {
 	background-color: #41F6D7;
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: -16px;
 	width: 4px;
 	height: 40px;
 	border-radius: 0 4px 4px 0;
@@ -184,26 +180,16 @@ body {
 	display: flex;
 	overflow-x: scroll;
 	margin-bottom: 24px;
-	padding-left: 16px;
 	gap: 4px;
 	letter-spacing: -0.2px;
 }
 
-.services::before,
 .services::after {
 	position: absolute;
 	content: '';
 	height: 100%;
 	width: 20px;
 	top: 0;
-}
-
-.services::before {
-	left: 0;
-	background: linear-gradient(to right, #F8F8F8, transparent);
-}
-
-.services::after {
 	right: 0;
 	background: linear-gradient(to left, #F8F8F8, transparent);
 }
@@ -303,7 +289,7 @@ body {
 }
 
 @media (width > 767.98px) {
-	_container {
+	._container {
 		padding: 0 24px;
 	}
 
@@ -326,6 +312,9 @@ body {
 		justify-self: end;
 	}
 
+	.main__title::before {
+		left: -24px;
+	}
 
 	.about__wrapper {
 		display: block;
@@ -349,7 +338,7 @@ body {
 	}
 
 	.about__text-box {
-		height: 163px;
+		height: 160px;
 		line-height: 20px;
 	}
 }
@@ -406,17 +395,20 @@ body {
 
 	.main__header {
 		margin-top: -70px;
-		background-color: #F8F8F8;
 	}
 
 	.services__list {
-		overflow-x: none;
+		overflow-x: hidden;
 		flex-wrap: wrap;
 	}
 
 	.main__title {
 		margin-bottom: 8px;
 		z-index: 6;
+	}
+
+	.main__title::before {
+		left: -32px;
 	}
 
 	.about__img-box {
@@ -426,5 +418,11 @@ body {
 
 	.about__text-box {
 		height: 160px;
+	}
+}
+
+@media (width > 1439.98px) {
+	._container {
+		margin: 0 auto;
 	}
 }
