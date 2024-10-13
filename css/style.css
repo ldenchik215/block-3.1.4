@@ -350,14 +350,21 @@ body {
 }
 
 @media (width > 1119.98px) {
+	body {
+		padding-top: 18px;
+	}
+
 	._container {
 		max-width: 1440px;
 		padding: 0 32px;
 	}
 
+	.header {
+		background-color: #F8F8F8;
+	}
+
 	.header__inner {
 		display: flex;
-		background-color: #F8F8F8;
 		border: none
 	}
 
@@ -393,9 +400,6 @@ body {
 		display: inline-block;
 	}
 
-	.main__header {
-		margin-top: -70px;
-	}
 
 	.services__list {
 		overflow-x: hidden;
