@@ -245,15 +245,22 @@ body {
 
 .about__text-box {
 	margin-bottom: 16px;
-	height: 90px;
+	max-height: 90px;
 	overflow: hidden;
 	font-size: 14px;
 	line-height: 18px;
 }
 
+.about__text {
+	display: none;
+}
 
-.about__text:not(:last-child) {
-	margin-bottom: 16px;
+.about__text + .about__text {
+	margin-top: 16px;
+}
+
+.about__text:nth-child(-n + 2) {
+	display: block;
 }
 
 .read-more-btn {
@@ -338,14 +345,8 @@ body {
 	}
 
 	.about__text-box {
-		height: 160px;
+		max-height: 160px;
 		line-height: 20px;
-	}
-}
-
-@media (width > 1000px) {
-	.about__text-box {
-		height: 155px;
 	}
 }
 
@@ -420,9 +421,6 @@ body {
 		margin-left: 34px;
 	}
 
-	.about__text-box {
-		height: 160px;
-	}
 }
 
 @media (width > 1439.98px) {
